@@ -1,0 +1,15 @@
+<h1>Pages Index List</h1>
+
+
+<%= link_to "New List", new_list_path, class: "btn btn-primary"  %>
+
+<div class="container">
+  <div class="d-flex">
+    <% @lists.each do |list| %>
+      <div class="card" style="width: 18rem;">
+        <img src="https://static.vecteezy.com/system/resources/thumbnails/046/924/864/small/smoke-fog-steam-red-dark-podium-night-retro-brick-stage-garage-room-corridor-bar-empty-space-with-spot-lights-realistic-background-3d-rendering-illustration-high-quality-photo.jpg" class="card-img-top" alt="...">
+        <%= link_to list.name, list_path(list) %>
+      </div>
+    <% end %>
+  </div>
+</div>

@@ -1,0 +1,22 @@
+<%= link_to "Back", lists_path %>
+
+<%= link_to "Add a movie",  new_list_bookmark_path(@list) %>
+
+
+
+<div class="container">
+  <h2>My List</h2>
+
+  <div class="d-flex">
+    <% @list.movies.each do |movie| %>
+      <div class="card" style="width: 18rem;">
+          <img src="<%= movie.poster_url %>" class="card-img-top" alt="...">
+          <div class="card-body">
+              <h5 class="card-title"><%= movie.title %></h5>
+              <p class="card-text"><%= movie.overview %></p>
+              <a href="#" class="btn btn-primary">Go somewhere</a>
+          </div>
+      </div>
+    <% end %>
+  </div>
+</div>
